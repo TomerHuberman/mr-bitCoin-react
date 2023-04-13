@@ -1,0 +1,27 @@
+.contact-preview {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 5fr 2fr;
+  max-width: em(500px);
+  width: 100%;
+  padding: em(5px) em(30px);
+  border-radius: 555px;
+
+  &:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.278);
+    cursor: pointer;
+  }
+
+  .phone {
+    align-self: end;
+  }
+  .name {
+    align-self: center;
+  }
+
+  .img {
+    grid-row: 1 / -1;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
