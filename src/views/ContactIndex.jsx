@@ -4,10 +4,9 @@ import { ContactDetails } from "./ContactDetails";
 import { ContactList } from "../cmps/ContactList";
 import { ContactFilter } from "../cmps/ContactFilter";
 
-export class Contacts extends Component {
+export class ContactIndex extends Component {
   state = {
     contacts: null,
-    selectedContactId: null,
     filterBy: {
       term: "",
     },
@@ -41,23 +40,14 @@ export class Contacts extends Component {
     return (
       <section className="contacts">
         <h1>Contacts</h1>
-        {selectedContactId ? (
-          <ContactDetails
-            onBack={() => this.onSelectContactId(null)}
-            contactId={selectedContactId}
-          />
-        ) : (
-          <>
-            <ContactFilter
-              filterBy={filterBy}
-              onChangeFilter={this.onChangeFilter}
-            />
-            <ContactList
-              onSelectContactId={this.onSelectContactId}
-              contacts={contacts}
-            />
-          </>
-        )}
+        <ContactFilter
+          filterBy={filterBy}
+          onChangeFilter={this.onChangeFilter}
+        />
+        <ContactList
+          onSelectContactId={this.onSelectContactId}
+          contacts={contacts}
+        />
       </section>
     );
   }

@@ -1,20 +1,27 @@
-import logo from "./logo.svg";
+import { Route, HashRouter as Router, Switch } from "react-router-dom";
 import "./assets/main.scss";
 import { Home } from "./views/Home";
-import { Contacts } from "./views/ContactIndex";
+import { ContactIndex } from "./views/ContactIndex";
 import { StatisticPage } from "./views/StatisticPage";
+import { AppHeader } from "./cmps/AppHeader";
+import { ContactDetails } from "./views/ContactDetails";
 
 function App() {
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>bitCoin</h1>
-      </header>
+    <Router>
+      <div className="app">
+        <AppHeader />
 
-      {/* <Home /> */}
-      {/* <Contacts /> */}
-      <StatisticPage />
-    </div>
+        <main className="container">
+          <Switch>
+            <Route path="/statistic" component={StatisticPage} />
+            <Route path="/contact/:id" component={ContactDetails} />
+            <Route path="/contact" component={ContactIndex} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </main>
+      </div>
+    </Router>
   );
 }
 
