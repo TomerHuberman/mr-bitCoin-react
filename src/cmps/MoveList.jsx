@@ -10,9 +10,9 @@ export function MoveList({ title, contactId }) {
     let moves;
     moves = contactId
       ? user.moves.filter((move) => move.toId === contactId)
-      : user.moves.splice(0, 3);
+      : user.moves.slice(0, 3);
     setMoves(moves);
-  }, []);
+  }, [moves]);
   return (
     <section className="move-list">
       <h2>{title}</h2>

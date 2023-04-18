@@ -1,6 +1,6 @@
 .container {
   max-width: $normal-breakpoint;
-  margin: 0 auto;
+  margin: $navHeight auto 0;
   padding-left: 10px;
   padding-right: 10px;
 
