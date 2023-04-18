@@ -13,6 +13,7 @@ export function MoveList({ title, contactId }) {
       : user.moves.slice(0, 3);
     setMoves(moves);
   }, [moves]);
+
   return (
     <section className="move-list">
       <h2>{title}</h2>
