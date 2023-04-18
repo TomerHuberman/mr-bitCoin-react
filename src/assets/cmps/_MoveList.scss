@@ -1,0 +1,28 @@
+.move-list {
+  display: grid;
+  min-width: em(380px);
+  background-color: rgba(138, 138, 142, 0.166);
+  padding: em(30px);
+  border-radius: 4px;
+  margin-bottom: em(20px);
+  gap: 5px;
+
+  > *:not(:first-child) {
+    display: grid;
+    align-items: center;
+    border-top: 2px solid rgba(238, 238, 238, 0.401);
+    border-bottom: 2px solid rgba(238, 238, 238, 0.401);
+    padding: em(10px);
+    border-radius: 20px;
+  }
+
+  h3 {
+    margin-bottom: em(6px);
+  }
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+  }
+}

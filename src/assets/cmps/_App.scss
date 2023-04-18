@@ -2,16 +2,24 @@
   .app-header {
     height: $navHeight;
     width: 100%;
-    background-color: darkblue;
+    background-color: rgba(138, 138, 142, 0.166);
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #fff;
 
+    .logo {
+      padding-inline-start: rem(15px);
+    }
+
     nav {
-      display: flex;
       > * {
-        margin-inline-end: 20px;
+        margin-inline-end: rem(20px);
+        transition: font-size .3s;
+        &.active {
+          text-decoration: underline;
+          font-size: em(18px);
+        }
       }
     }
   }

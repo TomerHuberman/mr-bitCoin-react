@@ -1,10 +1,11 @@
 import { Component } from "react";
 import { contactService } from "../services/contact.service";
-import { ContactDetails } from "./ContactDetails";
 import { ContactList } from "../cmps/ContactList";
+import { connect } from "react-redux";
 import { ContactFilter } from "../cmps/ContactFilter";
+import { loadContacts, setFilterBy } from "../store/actions/contact.actions";
 
-export class ContactIndex extends Component {
+class _ContactIndex extends Component {
   state = {
     contacts: null,
     filterBy: {
@@ -13,7 +14,7 @@ export class ContactIndex extends Component {
   };
 
   componentDidMount() {
-    this.loadContacts();
+    this.props.loadContacts();
   }
 
   onSelectContactId = (contactId) => {
@@ -21,8 +22,8 @@ export class ContactIndex extends Component {
   };
 
   onChangeFilter = (filterBy) => {
-    console.log("filterBy: ", filterBy);
-    this.setState({ filterBy: { ...filterBy } }, this.loadContacts);
+    this.props.setFilterBy(filterBy);
+    this.props.loadContacts();
   };
 
   loadContacts = async () => {
@@ -35,10 +36,10 @@ export class ContactIndex extends Component {
   };
 
   render() {
-    const { contacts, selectedContactId, filterBy } = this.state;
+    const { contacts, filterBy } = this.props;
     if (!contacts) return <div>Loading...</div>;
     return (
-      <section className="contacts">
+      <section className="contact-index">
         <h1>Contacts</h1>
         <ContactFilter
           filterBy={filterBy}
@@ -52,3 +53,17 @@ export class ContactIndex extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  contacts: state.contactModule.contacts,
+  filterBy: state.contactModule.filterBy,
+});
+
+const mapDispatchToProps = {
+  loadContacts,
+  setFilterBy,
+};
+
+export const ContactIndex = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_ContactIndex);

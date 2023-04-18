@@ -2,6 +2,8 @@ import { storageService } from "./storage.service";
 
 export const userService = {
   getUser,
+  transferCoins,
+  createMove
 };
 
 const USER_KEY = "user";
@@ -15,10 +17,30 @@ function getUser() {
   return user;
 }
 
+function createMove(contact, amount) {
+  const newMove = {
+    toId: contact._id,
+    to: contact.name,
+    at: Date.now(),
+    amount,
+  };
+  return newMove;
+}
+
+function transferCoins(amount, contact) {
+  const loggedInUser = storageService.load(USER_KEY);
+  const newMove = createMove(contact, amount);
+  loggedInUser.moves.unshift(newMove);
+  loggedInUser.balance -= +amount;
+  storageService.store(USER_KEY, loggedInUser);
+  return loggedInUser;
+}
+
+
 function createEmptyUser() {
   return {
     name: "Bobi bo",
-    coins: 100,
+    balance: 100,
     moves: [],
   };
 }

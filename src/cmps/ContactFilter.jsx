@@ -36,8 +36,9 @@ export class ContactFilter extends Component {
     return (
       <section className="contact-filter">
         <section>
-          <label htmlFor="term">Search </label>
+          {/* <label htmlFor="term">Search </label> */}
           <input
+            placeholder="Search"
             onChange={this.handleChange}
             value={term}
             term="text"

@@ -4,11 +4,11 @@
   grid-template-rows: 5fr 2fr;
   max-width: em(500px);
   width: 100%;
-  padding: em(5px) em(30px);
-  border-radius: 555px;
+  padding: em(5px) em(30px) em(15px) em(30px);
+  border-radius: 5px;
 
   &:hover {
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.278);
+    box-shadow: inset 3px -4px 20px 0px rgba(255, 255, 255, 0.278);
     cursor: pointer;
   }
 

@@ -1,0 +1,12 @@
+.contact-index {
+  display: grid;
+  gap: 2px;
+
+  h1 {
+    margin: em(6px) 0;
+  }
+
+  > *:not(.contact-list) {
+    justify-self: center;
+  }
+}

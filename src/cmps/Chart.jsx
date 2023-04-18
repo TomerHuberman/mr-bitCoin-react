@@ -19,10 +19,11 @@ ChartJS.register(
   Legend
 );
 export function Chart({ data }) {
+  console.log("data: ", data);
   const chartData = {
-    labels: data?.values.map((value) =>
-      new Date(value.x * 1000).toLocaleDateString()
-    ),
+    labels: data?.values
+      .map((value) => new Date(value.x * 1000).toLocaleDateString())
+      .splice(0, 100),
     datasets: [
       {
         label: data?.name,
@@ -31,6 +32,7 @@ export function Chart({ data }) {
         borderColor: "rgb(75, 192, 192)",
         backgroundColor: "rgba(70, 162, 235, 0.5)",
         tension: 0.1,
+        color: "rgb(255, 250, 240)",
       },
     ],
   };
@@ -38,7 +40,7 @@ export function Chart({ data }) {
 
   return (
     <div>
-      <Line data={chartData}/>
+      <Line data={chartData} />
     </div>
   );
 }
