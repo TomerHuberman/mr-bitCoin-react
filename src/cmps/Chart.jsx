@@ -19,7 +19,6 @@ ChartJS.register(
   Legend
 );
 export function Chart({ data }) {
-  console.log("data: ", data);
   const chartData = {
     labels: data?.values
       .map((value) => new Date(value.x * 1000).toLocaleDateString())

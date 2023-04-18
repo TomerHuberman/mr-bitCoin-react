@@ -4,7 +4,9 @@ import { Link, NavLink, withRouter } from "react-router-dom";
 function _AppHeader(props) {
   return (
     <header className="app-header">
-      <h1 className="logo">Mr-bitCoin</h1>
+      <NavLink exact to="/">
+        <h1 className="logo">Mr-bitCoin</h1>
+      </NavLink>
       <nav>
         <NavLink exact to="/">
           Home

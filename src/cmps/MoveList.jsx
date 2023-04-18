@@ -12,7 +12,7 @@ export function MoveList({ title, contactId }) {
       ? user.moves.filter((move) => move.toId === contactId)
       : user.moves.slice(0, 3);
     setMoves(moves);
-  }, [moves]);
+  }, [user.moves]);
 
   return (
     <section className="move-list">

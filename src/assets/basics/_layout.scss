@@ -1,5 +1,6 @@
 .container {
   max-width: $normal-breakpoint;
+  min-height: $AppHeight;
   margin: $navHeight auto 0;
   padding-left: 10px;
   padding-right: 10px;

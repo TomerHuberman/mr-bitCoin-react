@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { transferCoins } from "../store/actions/user.actions";
 
 export function TransferFund({ contact }) {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
   const [amountToHigh, setAmountToHigh] = useState(false);
   const user = useSelector((state) => state.userModule.loggedInUser);
   const dispatch = useDispatch();

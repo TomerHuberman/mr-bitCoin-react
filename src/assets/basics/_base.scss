@@ -16,7 +16,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(../imgs/background.jpg);
+  background: linear-gradient(
+    0deg,
+    rgb(2, 0, 27) 0%,
+    rgb(2, 13, 23) 44%,
+    rgba(13, 13, 13, 1) 80%,
+    rgba(6, 6, 6, 1) 100%
+  );
+  // background-image: url(../imgs/background.jpg);
 }
 
 img {
@@ -46,6 +53,16 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+  background-color: #f5f5f54a;
+  border: none;
+  border-radius: em(2px);
+  margin: em(2px);
+  height: em(40px);
+
+  &:hover {
+    background-color: #f5f5f595;
+  }
+
 
   * {
     pointer-events: none;
@@ -54,7 +71,7 @@ button {
 
 input {
   font-family: inherit;
-  text-align: inherit;
+text-align: inherit;
   width: em(250px);
   height: em(40px);
   border-radius: em(8px);

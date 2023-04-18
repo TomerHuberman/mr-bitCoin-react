@@ -9,7 +9,6 @@ export class StatisticPage extends Component {
 
   async componentDidMount() {
     const marketPrice = await BitcoinService.getMarketPrice();
-    console.log("marketPrice: ", marketPrice);
     this.setState({ marketPrice });
   }
 

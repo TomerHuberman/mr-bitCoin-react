@@ -1,6 +1,6 @@
 .contact-details {
   width: 100%;
-  height: calc($AppHeight - 30px);
+  min-height: calc($AppHeight - 30px);
   nav {
     display: flex;
     justify-content: space-between;

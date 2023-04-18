@@ -1,7 +1,6 @@
 .home {
   height: $AppHeight;
   display: grid;
-  justify-content: center;
   .user-info {
     margin-top: em(30px);
     > * {
